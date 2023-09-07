@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+	<Properties>
+		<Property name="log_level">${sys:log4j.level:-TRACE}</Property>
+		<Property name="runid">${date:YYYY-MM-dd-HH-mm-ss}</Property>
+	</Properties>
+	<Appenders>
+		<Console name="Console" target="SYSTEM_OUT">
+			<PatternLayout pattern="%date{HH:mm:ss,SSS} %highlight{%-5level} [%t] %logger{1}:%L - %msg%n"/>
+			<ThresholdFilter level="${log_level}"/>
+		</Console>
+		<!-- Special console appender for streaming logs into the logger -->
+		<Console name="LogStream" target="SYSTEM_OUT">
+			<PatternLayout pattern="%style{%markerSimpleName}{yellow} %style{%msg%n}{blue}"/>
+		</Console>
+		<File name="Logfile" fileName="target/tests-${runid}.log">
+			<PatternLayout pattern="%date{HH:mm:ss,SSS} %highlight{%-5level} [%t] %logger{1}:%L - %msg%n"/>
+		</File>
+	</Appenders>
+	<Loggers>
+		<Root level="INFO">
+			<AppenderRef ref="Logfile"/>
+		</Root>
+		<Logger name="software.tnb" level="TRACE" additivity="false">
+			<AppenderRef ref="Logfile"/>
+			<AppenderRef ref="Console"/>
+		</Logger>
+		<Logger name="software.tnb.product.log.stream" additivity="false">
+			<AppenderRef ref="LogStream"/>
+		</Logger>
+		<Logger name="cz.xtf">
+			<AppenderRef ref="Console" level="INFO"/>
+		</Logger>
+		<Logger name="org.eclipse.jgit" level="INFO" additivity="false">
+			<AppenderRef ref="Logfile"/>
+			<AppenderRef ref="Console"/>
+		</Logger>
+	</Loggers>
+</Configuration>

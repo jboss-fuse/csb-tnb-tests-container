@@ -1,0 +1,194 @@
+<settings xmlns="http://maven.apache.org/SETTINGS/1.0.0"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://maven.apache.org/SETTINGS/1.0.0
+                      https://maven.apache.org/xsd/settings-1.0.0.xsd">
+  <profiles>
+    <profile>
+      <id>repos</id>
+      <activation>
+        <property>
+          <name>!disable.repositories</name>
+        </property>
+      </activation>
+      <repositories>
+        <repository>
+          <id>central</id>
+          <name>Central repository proxy</name>
+          <url>https://repository.engineering.redhat.com/nexus/repository/maven-central/</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>jboss-qa-releases</id>
+          <name>JBoss QA Releases</name>
+          <url>https://repository.engineering.redhat.com/nexus/repository/jboss-qa-releases/</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>mrrc-ga</id>
+          <name>MRRC GA</name>
+          <url>https://maven.repository.redhat.com/ga/</url>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>mrrc-ea</id>
+          <name>MRRC EA</name>
+          <url>https://maven.repository.redhat.com/earlyaccess/all</url>
+          <snapshots>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>jboss-ea</id>
+          <name>JBoss Nexus</name>
+          <url>https://repository.jboss.org/nexus/content/groups/ea/</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>atlassian</id>
+          <name>Atlassian</name>
+          <url>https://packages.atlassian.com/mvn/maven-public/</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>nexus-corp</id>
+          <name>Nexus Corp</name>
+          <url>https://nexus.corp.redhat.com/repository/ads</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>indy-pnc</id>
+          <name>indy pnc</name>
+          <url>https://indy.psi.redhat.com/api/content/maven/group/builds-untested+shared-imports/</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>nexus-fuse-qe-repo</id>
+          <name>Fuse QE Repo</name>
+          <url>https://nexus.fuse-qe.eng.rdu2.redhat.com/repository/fuse-qe-repo/</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+        <repository>
+          <id>sonatype-snapshots</id>
+          <name>Sonatype Snapshots</name>
+          <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+          <snapshots>
+            <enabled>true</enabled>
+            <updatePolicy>never</updatePolicy>
+          </snapshots>
+          <releases>
+            <enabled>false</enabled>
+            <updatePolicy>never</updatePolicy>
+          </releases>
+        </repository>
+      </repositories>
+      <pluginRepositories>
+        <pluginRepository>
+          <id>central</id>
+          <name>Central repository proxy</name>
+          <url>https://repository.engineering.redhat.com/nexus/repository/maven-central/</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>jboss-qa-releases</id>
+          <name>JBoss QA Releases</name>
+          <url>https://repository.engineering.redhat.com/nexus/repository/jboss-qa-releases/</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>mrrc-ea</id>
+          <name>MRRC EA</name>
+          <url>https://maven.repository.redhat.com/earlyaccess/all</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>mrrc-ga</id>
+          <name>MRRC GA</name>
+          <url>https://maven.repository.redhat.com/ga/</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>atlassian</id>
+          <name>Atlassian</name>
+          <url>https://packages.atlassian.com/mvn/maven-public/</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>jboss-ea</id>
+          <name>JBoss Nexus</name>
+          <url>https://repository.jboss.org/nexus/content/groups/ea/</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>nexus-corp</id>
+          <name>Nexus Corp</name>
+          <url>https://nexus.corp.redhat.com/repository/ads</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>nexus-fuse-qe-repo</id>
+          <name>Fuse QE Repo</name>
+          <url>https://nexus.fuse-qe.eng.rdu2.redhat.com/repository/fuse-qe-repo/</url>
+        </pluginRepository>
+        <pluginRepository>
+          <id>sonatype-snapshots</id>
+          <name>Sonatype Snapshots</name>
+          <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+        </pluginRepository>
+      </pluginRepositories>
+    </profile>
+  </profiles>
+</settings>
